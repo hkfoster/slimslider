@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Slimslider.js : A Tiny jQuery Slider Plugin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1 class="logo">Slimslider.js</h1>
+    <a class="github" href="https://github.com/hkfoster/slimslider" target="_blank">Fork me on Github</a>
+    <span class="teaser">Resize me &rarr;</span>
+  </header>
+
+  <section class="wrapper">
+
+    <!-- Add container class of 'slider' -->
+    <section class="slider">
+
+      <!-- Add nav class of 'slide-nav' -->
+      <nav class="slide-nav">
+        <ul>
+          <li><a href="#">01</a></li>
+          <li><a href="#">02</a></li>
+          <li><a href="#">03</a></li>
+          <li><a href="#">04</a></li>
+          <li><a href="#">05</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Add slider container class of 'slides' -->
+      <ul class="slides">
+        <li><img src="img/01.jpg" alt="Slide 01"></li>    
+        <li><img src="img/02.jpg" alt="Slide 02"></li>
+        <li><img src="img/03.jpg" alt="Slide 03"></li>
+        <li><img src="img/04.jpg" alt="Slide 04"></li>
+        <li><img src="img/05.jpg" alt="Slide 05"></li>
+      </ul> 
+      
+    </section>
+
+</wrapper>
+    
+  <footer class="colophon">
+    <p>Copyleft &copy; <script>document.write(new Date().getFullYear())</script> Kyle Foster. All wrongs reversed.</p>
+  </footer>
+
+  <!-- Include jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+  <!-- Include Slimslider (minified please) -->
+  <script src="js/slimslider.min.js"></script>
+
+  <!-- Instantiate Slimslider -->
+  <script>
+    $(window).load(function() {
+
+      $('.slider').slimSlider({
+        animSpeed  : '0.5s', // animation speed
+        autoPlay   : true,   // auto play option
+        autoDelay  : 4000,   // auto play duration
+        hoverPause : true    // auto play pause on hover
+      });
+
+      $('body').fadeTo(500,1); // Just a nice transition effect
+
+      $(window).resize(function() {
+        $('.teaser').fadeTo(500, 0); // Removing our teaser on resize
+      });
+
+    });
+  </script>
+  
+</body>
+</html>

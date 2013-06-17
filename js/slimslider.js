@@ -1,5 +1,5 @@
 /**
- * Slimslider v1.0.5
+ * Slimslider v1.1.0
  * @author Kyle Foster
  * MIT license
  */
@@ -18,10 +18,11 @@
           slide    = wrapper.children('li'),
           slideCnt = slide.length,
           navLink  = element.find('.slide-nav').find('li').find('a'),
-          prefix   = ($.browser.webkit)  ? '-webkit-' :
-                     ($.browser.mozilla) ? '-moz-' : 
-                     ($.browser.msie)    ? '-ms-' :
-                     ($.browser.opera)   ? '-o-' : '';
+          prefix   = (/mozilla/.test(navigator.userAgent.toLowerCase()) && 
+                     !/webkit/.test(navigator.userAgent.toLowerCase())) ? '-moz-' : 
+                     (/webkit/.test(navigator.userAgent.toLowerCase())) ? '-webkit-' :
+                     (/msie/.test(navigator.userAgent.toLowerCase()))   ? '-ms-' :
+                     (/opera/.test(navigator.userAgent.toLowerCase()))  ? '-o-' : '';
       
       // Add active class to first nav link
       navLink.first().addClass('active');    
